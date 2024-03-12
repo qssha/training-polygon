@@ -1,6 +1,6 @@
 source_path = ./
 
-files = unsigned_test check_type print_2m
+files = unsigned_test check_type print_2m init_exercise_test ident_test scope_test pointer_exercise
 
 bin_path = ../bin/
 bin=$(addprefix $(bin_path), $(files))
@@ -11,8 +11,11 @@ CXXFLAGS=-O0 -Wall -std=c++14
 
 all: $(bin)
 
-$(bin_path)%: $(source_path)%.cpp
+$(bin_path)%: $(source_path)%.cpp | $(bin_path)
 	$(CXX) $(INC_PARAMS) $< $(CXXFLAGS) -o $@
+
+$(bin_path):
+	mkdir -p $(bin_path)
 
 format: 
 	for file in $(files); do \

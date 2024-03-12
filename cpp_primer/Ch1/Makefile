@@ -15,8 +15,11 @@ CXXFLAGS=-O0 -Wall -std=c++14
 
 all: $(bin)
 
-$(bin_path)%: $(source_path)%.cpp
+$(bin_path)%: $(source_path)%.cpp | $(bin_path)
 	$(CXX) $(INC_PARAMS) $< $(CXXFLAGS) -o $@
+
+$(bin_path):
+	mkdir -p $(bin_path)
 
 format: 
 	for file in $(files); do \
