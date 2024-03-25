@@ -1,6 +1,7 @@
 source_path = ./
 
-files = unsigned_test check_type print_2m init_exercise_test ident_test scope_test pointer_exercise const_test auto_test auto_test_second
+files = unsigned_test check_type print_2m init_exercise_test ident_test scope_test pointer_exercise const_test auto_test auto_test_second \
+		struct_semicolon_test sales_data sales_data_two_books sales_data_sum sales_data_diff_items_sum
 
 bin_path = ../bin/
 bin=$(addprefix $(bin_path), $(files))
