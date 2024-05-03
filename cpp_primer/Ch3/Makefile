@@ -1,7 +1,7 @@
 source_path = ./
 
 files = sum_50_100_using_word print_10_to_1_using print_range_using string_input_test read_string_and_line string_comp string_size_comp string_sum_input \
-		string_sum_input replace_string_to_x print_string_without_punct_chars
+		string_sum_input replace_string_to_x print_string_without_punct_chars read_int_to_vector read_string_to_vector
 
 bin_path = ../bin/
 bin=$(addprefix $(bin_path), $(files))
