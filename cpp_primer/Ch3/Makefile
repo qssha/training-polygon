@@ -5,7 +5,7 @@ files = sum_50_100_using_word print_10_to_1_using print_range_using string_input
 		read_words_and_convert_to_upper_case read_numbers_and_calc_near_sum read_numbers_and_calc_sym_pair_sum read_numbers_and_calc_sym_pair_sum_with_iterators \
 		cluster_grades test_array_init init_array_with_index_number init_and_copy_array_with_index_number init_and_copy_vector_with_index_number \
 		array_values_to_zeroes_with_pointers compare_two_arrays compare_two_vectors compare_two_cpp_strings compare_two_c_strings copy_two_cstrings_to_third_cstring \
-		init_int_vec_from_array copy_int_vec_to_array
+		init_int_vec_from_array copy_int_vec_to_array print_multi_dim_arr_without_typedef_auto_or_decltype print_multi_dim_arr_with_typedef print_multi_dim_arr_with_auto
 
 bin_path = ../bin/
 bin=$(addprefix $(bin_path), $(files))
