@@ -1,9 +1,9 @@
 files = led_blink
-current_prog_file = led_blink
+current_flash_prog = led_blink
 
 hex_prog_path = ./hex_prog/
 hex_prog=$(addprefix $(hex_prog_path), $(files))
-hex_prog_prog=$(addprefix $(hex_prog_path), $(current_prog_file))
+hex_flash=$(addprefix $(hex_prog_path), $(current_flash_prog))
 
 INC = ./include
 INC_PARAMS=$(foreach d, $(INC), -I$d)
@@ -24,7 +24,7 @@ $(hex_prog_path)%.o: $(source_path)%.c | $(hex_prog_path)
 $(hex_prog_path):
 	mkdir -p $(hex_prog_path)
 
-prog: $(hex_prog_prog).hex
+flash: $(hex_flash).hex
 	 avrdude -p $(mcu_name) -c usbasp -e -U flash:w:$< -B4
 
 clean:
