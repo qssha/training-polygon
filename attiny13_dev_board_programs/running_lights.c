@@ -31,7 +31,7 @@ ISR(TIM0_COMPA_vect)
 	static unsigned char light = 3;
 	if (!direction) // прямое направление
 	{
-		if (light > 0 & light < 0x0c) light <<= 1;
+		if ((light > 0) & (light < 0x0c)) light <<= 1;
 		else light = 0x03;
 	}
 	else // обратное направление
@@ -39,7 +39,8 @@ ISR(TIM0_COMPA_vect)
 		if (light > 0) light >>= 1;
 		else light = 0x03;
 	}
-	PORTB = (PORTB & 0x3c) | (light & 0x3); // Подставляем в младшие 2 бита порта "B" значение переменной light
+	PORTB = (PORTB & 0x3c) | (light & 0x3); // Подставляем в младшие 2 бита порта "B" значение переменной light, PORTB имеет 6 выставляемых битов, поэтому
+						// используем маску 0x3c=00111100
 }
 
 int main(void)
